@@ -1,0 +1,844 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rougamo</name>
+    </assembly>
+    <members>
+        <member name="T:Rougamo.AccessFlags">
+            <summary>
+            accessable flags
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.Static">
+            <summary>
+            Static
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.Instance">
+            <summary>
+            Instance
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.Public">
+            <summary>
+            Public
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.NonPublic">
+            <summary>
+            NonPublic
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.StaticPublic">
+            <summary>
+            Static and Public
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.StaticNonPublic">
+            <summary>
+            Static and NonPublic
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.InstancePublic">
+            <summary>
+            Instance and Public (default)
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.InstanceNonPublic">
+            <summary>
+            Instance and NonPublic
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.All">
+            <summary>
+            Static and instance, public and nonpublic
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.Method">
+            <summary>
+            Method only(except property get set methods)
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.PropertyGetter">
+            <summary>
+            Property getter only
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.PropertySetter">
+            <summary>
+            Property setter only
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.Property">
+            <summary>
+            Property getter and setter
+            </summary>
+        </member>
+        <member name="F:Rougamo.AccessFlags.Constructor">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="T:Rougamo.AsyncMo">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMo.OnEntryAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMo.OnExceptionAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMo.OnSuccessAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMo.OnExitAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMo.OnEntry(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMo.OnException(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMo.OnSuccess(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMo.OnExit(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Rougamo.AsyncMoAttribute">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMoAttribute.OnEntryAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMoAttribute.OnExceptionAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMoAttribute.OnSuccessAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMoAttribute.OnExitAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMoAttribute.OnEntry(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMoAttribute.OnException(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMoAttribute.OnSuccess(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.AsyncMoAttribute.OnExit(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Rougamo.Context.MethodContext">
+            <summary>
+            Method execution context
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.Datas">
+            <summary>
+            User-defined state data.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.Mos">
+            <summary>
+            All of the <see cref="T:Rougamo.IMo"/> instances that apply to the current method.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.Target">
+            <summary>
+            Instance of the declaring type; return null if the current method is static.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.TargetType">
+            <summary>
+            The declaring type of current method.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.Method">
+            <summary>
+            Current method information.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.Arguments">
+            <summary>
+            Arguments of current method.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.RewriteArguments">
+            <summary>
+            Set it to true in OnEntry or OnEntryAsync; the <see cref="P:Rougamo.Context.MethodContext.Arguments"/> you change in OnEntry/OnEntryAsync will rewrite the method's arguments.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.ReturnType">
+            <summary>
+            The return type of current method.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.TaskReturnType">
+            <summary>
+            Get void if the method's return type is <see cref="T:System.Threading.Tasks.Task"/> or <see cref="T:System.Threading.Tasks.ValueTask"/>;
+            get the first generic argument type if the method's return type is <see cref="T:System.Threading.Tasks.Task`1"/> or <see cref="T:System.Threading.Tasks.ValueTask`1"/>
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.HasReturnValue">
+            <summary>
+            Return true if return value type is not void or Task or ValueTask
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.ReturnValue">
+            <summary>
+            Method return value. Do not change it directly, call <see cref="M:Rougamo.Context.MethodContext.ReplaceReturnValue(Rougamo.IMo,System.Object)"/> or <see cref="M:Rougamo.Context.MethodContext.HandledException(Rougamo.IMo,System.Object)"/> instead.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.ReturnValueReplaced">
+            <summary>
+            Return true if return value has been replaced.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.ReturnValueModifier">
+            <summary>
+            Which <see cref="T:Rougamo.IMo"/> changed the return value.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.Exception">
+            <summary>
+            Exception thrown by method. Do not change it directly, call <see cref="M:Rougamo.Context.MethodContext.HandledException(Rougamo.IMo,System.Object)"/> instead.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.HasException">
+            <summary>
+            Is there an unhandled exception.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.ExceptionHandled">
+            <summary>
+            Return true if the exception has been handled
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.ExceptionHandler">
+            <summary>
+            Which <see cref="T:Rougamo.IMo"/> handled the exception.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Context.MethodContext.RetryCount">
+            <summary>
+            The current method will re-execute if the value is greater than 0 after <see cref="M:Rougamo.IMo.OnSuccess(Rougamo.Context.MethodContext)"/> and
+            <see cref="M:Rougamo.IMo.OnException(Rougamo.Context.MethodContext)"/> have been executed.
+            </summary>
+        </member>
+        <member name="M:Rougamo.Context.MethodContext.HandledException(Rougamo.IMo,System.Object)">
+            <summary>
+            Prevent exceptions thrown by the method and set the return value.
+            If the return type is void, <paramref name="returnValue"/> is ignored.
+            <see cref="P:Rougamo.Context.MethodContext.ExceptionHandled"/> and <see cref="P:Rougamo.Context.MethodContext.ReturnValueReplaced"/> will be set to true.
+            </summary>
+        </member>
+        <member name="M:Rougamo.Context.MethodContext.ReplaceReturnValue(Rougamo.IMo,System.Object)">
+            <summary>
+            Replace return value, if the return type is void, <paramref name="returnValue"/> is ignored.
+            <see cref="P:Rougamo.Context.MethodContext.ReturnValueReplaced"/> will be set to true
+            </summary>
+        </member>
+        <member name="M:Rougamo.Context.MethodContext.TryReset">
+            <inheritdoc/>
+        </member>
+        <member name="T:Rougamo.Context.Omit">
+            <summary>
+            To minimize boxing operations, discard some useless objects is the best way.
+            </summary>
+        </member>
+        <member name="F:Rougamo.Context.Omit.None">
+            <summary>
+            Do not omit anything
+            </summary>
+        </member>
+        <member name="F:Rougamo.Context.Omit.Mos">
+            <summary>
+            Omit MethodContext.Mos property
+            </summary>
+        </member>
+        <member name="F:Rougamo.Context.Omit.Arguments">
+            <summary>
+            Omit MethodContext.Arguments property
+            </summary>
+        </member>
+        <member name="F:Rougamo.Context.Omit.ReturnValue">
+            <summary>
+            Omit MethodContext.ReturnValue property
+            </summary>
+        </member>
+        <member name="F:Rougamo.Context.Omit.All">
+            <summary>
+            Omit all
+            </summary>
+        </member>
+        <member name="T:Rougamo.Feature">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.OnEntry">
+            <summary>
+            OnEntry
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.OnException">
+            <summary>
+            OnException
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.OnSuccess">
+            <summary>
+            OnSuccess
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.OnExit">
+            <summary>
+            OnExit
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.Args">
+            <summary>
+            Not a really feature, use <see cref="F:Rougamo.Feature.RewriteArgs"/> or <see cref="F:Rougamo.Feature.NonRewriteArgs"/> instead, or for exception only
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.RewriteArgs">
+            <summary>
+            OnEntry and RewriteArgument
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.EntryReplace">
+            <summary>
+            OnEntry and return early with replaced return value
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.RetryAny">
+            <summary>
+            ExceptionRetry or SuccessRetry, you shouldn't use it in your code
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.ExceptionRetry">
+            <summary>
+            OnException and re-execute method if retry
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.SuccessRetry">
+            <summary>
+            OnSuccess and re-execute method if retry
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.Retry">
+            <summary>
+            ExceptionRetry or SuccessRetry
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.ExceptionHandle">
+            <summary>
+            OnException and return with handled value
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.SuccessReplace">
+            <summary>
+            OnSuccess and return replaced value
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.Observe">
+            <summary>
+            OnEntry, OnException, OnSuccess and OnExit
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.FreshArgs">
+            <summary>
+            Gets latest arguments value before calls OnException, OnSuccess and OnExit
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.NonRewriteArgs">
+            <summary>
+            Except Rewrite Arguments
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.NonRetry">
+            <summary>
+            Except Retry
+            </summary>
+        </member>
+        <member name="F:Rougamo.Feature.All">
+            <summary>
+            all features(default)
+            </summary>
+        </member>
+        <member name="T:Rougamo.Flexibility.IFlexibleModifierPointcut">
+            <summary>
+            When an attribute implements this interface, it allows setting the modifier pointcut when applied to the method.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Flexibility.IFlexibleModifierPointcut.Flags">
+            <summary>
+            Weavable method type, this attribute has no effect when applied at the method level.
+            </summary>
+        </member>
+        <member name="T:Rougamo.Flexibility.IFlexibleOrderable">
+            <summary>
+            When an attribute implements this interface, it allows setting the execution order when applied to the method.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Flexibility.IFlexibleOrderable.Order">
+            <summary>
+            Execution order.
+            </summary>
+        </member>
+        <member name="T:Rougamo.Flexibility.IFlexiblePatternPointcut">
+            <summary>
+            When an attribute implements this interface, it allows setting the pattern pointcut when applied to the method.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Flexibility.IFlexiblePatternPointcut.Pattern">
+            <summary>
+            Method matched with this pattern will be weaving. This attribute has no effect when applied at the method level. It has a higher priority than <see cref="!:Flags"/>
+            </summary>
+            <remarks>
+            https://github.com/inversionhourglass/Shared.Cecil.AspectN
+            </remarks>
+        </member>
+        <member name="T:Rougamo.ForceSync">
+            <summary>
+            Which methods should be executed synchronously in an async method
+            </summary>
+        </member>
+        <member name="F:Rougamo.ForceSync.None">
+            <summary>
+            None of mo's methods should be executed synchronously in async method
+            </summary>
+        </member>
+        <member name="F:Rougamo.ForceSync.OnEntry">
+            <summary>
+            OnEntry should be executed synchronously in async method
+            </summary>
+        </member>
+        <member name="F:Rougamo.ForceSync.OnSuccess">
+            <summary>
+            OnSuccess should be executed synchronously in async method
+            </summary>
+        </member>
+        <member name="F:Rougamo.ForceSync.OnException">
+            <summary>
+            OnException should be executed synchronously in async method
+            </summary>
+        </member>
+        <member name="F:Rougamo.ForceSync.OnExit">
+            <summary>
+            OnExit should be executed synchronously in async method
+            </summary>
+        </member>
+        <member name="F:Rougamo.ForceSync.All">
+            <summary>
+            All of mo's methods should be executed synchronously in async method
+            </summary>
+        </member>
+        <member name="T:Rougamo.IgnoreMoAttribute">
+            <summary>
+            Ignore code weaving.
+            </summary>
+        </member>
+        <member name="P:Rougamo.IgnoreMoAttribute.MoTypes">
+            <summary>
+            Ignore the specified weaving type that implements the <see cref="T:Rougamo.IMo"/> interface, ignore all if null.
+            </summary>
+        </member>
+        <member name="T:Rougamo.IMo">
+            <summary>
+            Basic interface for code weaving.
+            </summary>
+        </member>
+        <member name="M:Rougamo.IMo.OnEntry(Rougamo.Context.MethodContext)">
+            <summary>
+            Before the method executing.
+            </summary>
+        </member>
+        <member name="M:Rougamo.IMo.OnSuccess(Rougamo.Context.MethodContext)">
+            <summary>
+            After the method executes successfully
+            </summary>
+        </member>
+        <member name="M:Rougamo.IMo.OnException(Rougamo.Context.MethodContext)">
+            <summary>
+            When an exception occurs when the method is executed.
+            </summary>
+        </member>
+        <member name="M:Rougamo.IMo.OnExit(Rougamo.Context.MethodContext)">
+            <summary>
+            After the method is executed, whether it succeeds or an exception occurs.
+            </summary>
+        </member>
+        <member name="M:Rougamo.IMo.OnEntryAsync(Rougamo.Context.MethodContext)">
+            <summary>
+            Before the method executing.
+            </summary>
+        </member>
+        <member name="M:Rougamo.IMo.OnSuccessAsync(Rougamo.Context.MethodContext)">
+            <summary>
+            After the method executes successfully
+            </summary>
+        </member>
+        <member name="M:Rougamo.IMo.OnExceptionAsync(Rougamo.Context.MethodContext)">
+            <summary>
+            When an exception occurs when the method is executed.
+            </summary>
+        </member>
+        <member name="M:Rougamo.IMo.OnExitAsync(Rougamo.Context.MethodContext)">
+            <summary>
+            After the method is executed, whether it succeeds or an exception occurs.
+            </summary>
+        </member>
+        <member name="T:Rougamo.IResettable">
+            <summary>
+            Represents an object that can be reset to its initial state.
+            </summary>
+        </member>
+        <member name="M:Rougamo.IResettable.TryReset">
+            <summary>
+            Resets the object to its initial state.
+            </summary>
+        </member>
+        <member name="T:Rougamo.IRougamo`1">
+            <summary>
+            For types that implement this interface, use <typeparamref name="T"/> for code weaving.
+            </summary>
+            <typeparam name="T">The type implements <see cref="T:Rougamo.IMo"/>.</typeparam>
+        </member>
+        <member name="T:Rougamo.IRougamo`2">
+            <summary>
+            For types that implement this interface, use <typeparamref name="TMo"/> for code weaving.
+            </summary>
+            <typeparam name="TMo">The type implements <see cref="T:Rougamo.IMo"/>.</typeparam>
+            <typeparam name="TRepulsion">
+            The type implements <see cref="T:Rougamo.IMo"/>, mutually exclusive with <typeparamref name="TMo"/>, 
+            only one takes effect at the same time according to the priority relationship.
+            </typeparam>
+        </member>
+        <member name="T:Rougamo.IRepulsionsRougamo`2">
+            <summary>
+            For types that implement this interface, use <typeparamref name="TMo"/> for code weaving.
+            </summary>
+            <typeparam name="TMo">The type implements <see cref="T:Rougamo.IMo"/>.</typeparam>
+            <typeparam name="TRepulsion">
+            The type implements <see cref="T:Rougamo.MoRepulsion"/>, its <see cref="P:Rougamo.MoRepulsion.Repulsions"/> defines
+            multiple mutually exclusive types with <typeparamref name="TMo"/>, and only one takes effect at
+            the same time according to the priority relationship.
+            </typeparam>
+        </member>
+        <member name="T:Rougamo.Lifetime">
+            <summary>
+            The lifetime of Mo.
+            </summary>
+        </member>
+        <member name="F:Rougamo.Lifetime.Singleton">
+            <summary>
+            Singleton
+            </summary>
+        </member>
+        <member name="F:Rougamo.Lifetime.Pooled">
+            <summary>
+            Pooled
+            </summary>
+        </member>
+        <member name="F:Rougamo.Lifetime.Transient">
+            <summary>
+            Transient
+            </summary>
+        </member>
+        <member name="T:Rougamo.Metadatas.AdviceAttribute">
+            <summary>
+            Rougamo advice attribute
+            </summary>
+        </member>
+        <member name="M:Rougamo.Metadatas.AdviceAttribute.#ctor(Rougamo.Feature)">
+            <summary>
+            Rougamo advice attribute
+            </summary>
+        </member>
+        <member name="P:Rougamo.Metadatas.AdviceAttribute.Features">
+            <summary>
+            Which features you need
+            </summary>
+        </member>
+        <member name="T:Rougamo.Metadatas.LifetimeAttribute">
+            <summary>
+            Define the lifetime of the type.
+            </summary>
+        </member>
+        <member name="M:Rougamo.Metadatas.LifetimeAttribute.#ctor(Rougamo.Lifetime)">
+            <summary>
+            Define the lifetime of the type.
+            </summary>
+        </member>
+        <member name="P:Rougamo.Metadatas.LifetimeAttribute.Lifetime">
+            <summary>
+            The lifetime of the type.
+            </summary>
+        </member>
+        <member name="T:Rougamo.Metadatas.OptimizationAttribute">
+            <summary>
+            Rougamo optimize attribute
+            </summary>
+        </member>
+        <member name="P:Rougamo.Metadatas.OptimizationAttribute.MethodContext">
+            <summary>
+            Which members of MethodContext you don't need
+            </summary>
+        </member>
+        <member name="P:Rougamo.Metadatas.OptimizationAttribute.ForceSync">
+            <summary>
+            Which methods should be executed synchronously in an async method
+            </summary>
+        </member>
+        <member name="T:Rougamo.Metadatas.PointcutAttribute">
+            <summary>
+            Rougamo pointcut attribute
+            </summary>
+        </member>
+        <member name="M:Rougamo.Metadatas.PointcutAttribute.#ctor(Rougamo.AccessFlags)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Rougamo.Metadatas.PointcutAttribute.#ctor(System.String)">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Rougamo.Metadatas.PointcutAttribute.Flags">
+            <summary>
+            Modifier flags
+            </summary>
+        </member>
+        <member name="P:Rougamo.Metadatas.PointcutAttribute.Pattern">
+            <summary>
+            AspectN pattern
+            </summary>
+            <remarks>
+            https://github.com/inversionhourglass/Shared.Cecil.AspectN
+            </remarks>
+        </member>
+        <member name="T:Rougamo.Mo">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.Mo.OnEntry(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.Mo.OnException(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.Mo.OnSuccess(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.Mo.OnExit(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.Mo.OnEntryAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.Mo.OnExceptionAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.Mo.OnSuccessAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.Mo.OnExitAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Rougamo.MoAttribute">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.MoAttribute.OnEntry(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.MoAttribute.OnException(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.MoAttribute.OnSuccess(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.MoAttribute.OnExit(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.MoAttribute.OnEntryAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.MoAttribute.OnExceptionAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.MoAttribute.OnSuccessAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.MoAttribute.OnExitAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Rougamo.MoProxyAttribute">
+            <summary>
+            Weaving using an existing Attribute as the proxy type.
+            </summary>
+        </member>
+        <member name="M:Rougamo.MoProxyAttribute.#ctor(System.Type,System.Type)">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Rougamo.MoProxyAttribute.OriginAttributeType">
+            <summary>
+            Attribute type being proxied.
+            </summary>
+        </member>
+        <member name="P:Rougamo.MoProxyAttribute.MoAttribtueType">
+            <summary>
+            Proxy Attribute inherited from <see cref="T:Rougamo.MoAttribute"/>.
+            </summary>
+        </member>
+        <member name="T:Rougamo.MoRepulsion">
+            <summary>
+            Multiple mutex types, used with <see cref="T:Rougamo.IRepulsionsRougamo`2"/>.
+            </summary>
+        </member>
+        <member name="P:Rougamo.MoRepulsion.Repulsions">
+            <summary>
+            The type must implements <see cref="T:Rougamo.IMo"/>, and when implementing this class,
+            the field must be initialized once and cannot contain logic processing.
+            </summary>
+            <example>
+            Repulsions = new [] { typeof(Abc), typeof(Bcd) };
+            </example>
+        </member>
+        <member name="T:Rougamo.RawMo">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Rougamo.RawMo.OnEntry(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMo.OnEntryAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMo.OnException(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMo.OnExceptionAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMo.OnExit(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMo.OnExitAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMo.OnSuccess(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMo.OnSuccessAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Rougamo.RawMoAttribute">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Rougamo.RawMoAttribute.OnEntry(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMoAttribute.OnEntryAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMoAttribute.OnException(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMoAttribute.OnExceptionAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMoAttribute.OnExit(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMoAttribute.OnExitAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMoAttribute.OnSuccess(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RawMoAttribute.OnSuccessAsync(Rougamo.Context.MethodContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Rougamo.RougamoAttribute">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RougamoAttribute.#ctor(System.Type)">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Rougamo.RougamoAttribute.MoType">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Rougamo.RougamoAttribute`1">
+            <inheritdoc/>
+        </member>
+        <member name="M:Rougamo.RougamoAttribute`1.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Rougamo.RougamoPool`1">
+            <summary>
+            Object pool implementation.
+            </summary>
+        </member>
+        <member name="M:Rougamo.RougamoPool`1.#cctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Rougamo.RougamoPool`1.Get">
+            <summary>
+            Get <typeparamref name="T"/> instance from the pool.
+            </summary>
+        </member>
+        <member name="M:Rougamo.RougamoPool`1.Return(`0)">
+            <summary>
+            Return <paramref name="value"/> back to the pool.
+            </summary>
+        </member>
+        <member name="T:Rougamo.SkipRefStructAttribute">
+            <summary>
+            Ref structs cannot be boxed or unboxed, so ref struct parameters cannot be saved into MethodContext.Arguments, and ref struct return values cannot be saved into MethodContext.ReturnValue.
+            You can use <see cref="T:Rougamo.Metadatas.OptimizationAttribute"/> to indicate that the aspect type does not require parameters or return values. If you don't, you must use this attribute to skip ref struct parameters and return value.
+            </summary>
+        </member>
+        <member name="T:System.ExceptionExtensions">
+            <summary>
+            <see cref="T:System.Exception"/> extension methods
+            </summary>
+        </member>
+        <member name="M:System.ExceptionExtensions.ToNonRougamoString(System.Exception)">
+            <summary>
+            <see cref="T:System.Exception"/> ToString without Rougamo stack frames
+            </summary>
+        </member>
+        <member name="M:System.ExceptionExtensions.GetNonRougamoStackTrace(System.Exception)">
+            <summary>
+            Get the stack trace without Rougamo stack frames from <paramref name="exception"/>
+            </summary>
+        </member>
+        <member name="T:System.ExceptionExtensions.AsyncState">
+            不同的.NET版本在异步方法中抛出异常时的调用栈可能不同
+            [net461,        net48        ] MoveNext -> Throw -> Notification -> GetResult
+            [netcoreapp2.0, netcoreapp2.1] MoveNext -> Throw -> Notification
+            [netcoreapp3.1, net6.0       ] MoveNext -> Throw -> ThrowNonSuccess -> Notification -> GetResult
+            [ent7.0,        net8.0       ] MoveNext -> Throw -> ThrowNonSuccess -> Notification
+            
+            如果OnException或OnExit有异步执行的，还会而外产生两次堆栈：MoveNext -> Throw
+            [net461,        net48        ] MoveNext -> Throw -> MoveNext -> Throw -> Notification -> GetResult
+            [netcoreapp2.0, netcoreapp2.1] MoveNext -> Throw -> MoveNext -> Throw -> Notification
+            [netcoreapp3.1, net6.0       ] MoveNext -> Throw -> MoveNext -> Throw -> ThrowNonSuccess -> Notification -> GetResult
+            [ent7.0,        net8.0       ] MoveNext -> Throw -> MoveNext -> Throw -> ThrowNonSuccess -> Notification
+        </member>
+    </members>
+</doc>

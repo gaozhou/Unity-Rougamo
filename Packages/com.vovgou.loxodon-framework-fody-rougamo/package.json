@@ -1,0 +1,20 @@
+{
+  "name": "com.vovgou.loxodon-framework-fody-rougamo",
+  "displayName": "Loxodon Framework Fody Rougamo",
+  "version": "2.6.6",
+  "unity": "2018.4",
+  "description": "Rougamo.",
+  "license": "MIT",
+  "keywords": [
+    "MVVM",
+    "Unity3d",
+    "Fody",
+    "Rougamo",
+    "Weaver"
+  ],
+  "category": "GUI",
+  "relatedPackages": {},
+    "dependencies": {
+    "com.vovgou.loxodon-framework-fody": "2.6.6"
+  }
+}
